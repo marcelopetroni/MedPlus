@@ -4,27 +4,47 @@
 
 Aplicativo mobile feito em React Native que auxilia no controle de reagendamento de consultas com realocação de vagas à medida de cancelamento de última hora, resolvendo o problema de ausência em consultas médicas. Além disso, a aplicação conta com auxílio para triagem eficiente de pacientes e cuidados pós consulta para evitar o retorno desnecessário.
 
-- Minhas Consultas: O usuário vai poder visualizar, cancelar ou confirmar uma consulta que esteja agendada.
-- Agendamento Flash: O usuário vai ter acesso a um calendário que se atualizará sempre que surgir uma vaga de última hora por cancelamento de outro paciente. Dessa forma, se outro paciente tiver à possibilidade de se alocar nessa vaga, o tempo do médico não será desperdiçado e um paciente não irá precisar esperar.
-- Meus Cuidados: O usuário vai ter acesso a uma página com lembretes e instruções de recomendações médicas no pós consulta. 
-- Triagem Rápida: Para evitar desperdício de tempo, o usuário poderá conversar com ChatBot do aplicativo e dizer seus sintomas, logo esse ChatBot analisará de acordo com os CIDs, quais possíveis especialistas que esse usuário precisa ser encaminhado/marcar consulta.
+## Funcionalidades
+🔔 Notificações de Consulta: Envia lembretes para os pacientes com a opção de confirmar ou cancelar a consulta.
+📅 Realocação de Vagas: Calendário com vagas de última hora devido a cancelamentos, permitindo que pacientes se realoquem e aproveitem horários disponíveis.
+📝 Cuidados Pós-Consulta: Envia lembretes e instruções pós-consulta para garantir que os pacientes sigam as recomendações médicas.
+💬 Triagem Rápida: Assistente virtual integrado com as Tabelas da CID-10 para triagem eficiente e encaminhamento para a especialidade correta.
 
-## Time 🏆
+## 🏆 Time
 
-- Breno do Amaral Falcão Souto - [brenodoamaral1](https://github.com/brenodoamaral1)
+#### 👨‍💻 Desenvolvedores
 
-- Gabriella Graciano de Souza - [gabygraciano](https://github.com/gabygraciano)
+Front-end:
+Breno do Amaral Falcão Souto
+📧 E-mail: brenodoamaral1@gmail.com
+🌐 GitHub: github.com/brenodoamaral1
 
-- Leonardo José de Araújo Seabra - [Leonardo Seabra](https://www.linkedin.com/in/leo-seabra-086623275/)
+Back-end:
+Rennan José da Silva Miranda
+📧 E-mail: rennan.jsmiranda@gmail.com
+🌐 GitHub: github.com/RennanJSM
 
-- Marcelo Nunes Ananias Petroni - [marcelopetroni](https://github.com/marcelopetroni)
+Full-stack:
+Marcelo Nunes Ananias Petroni
+📧 E-mail: marceloapetroni@hotmail.com
+🌐 GitHub: github.com/marcelopetroni
 
-- Rennan José da Silva Miranda - [RennanJSM](https://github.com/RennanJSM)
+#### 🎨 UX/UI Designers
+
+Gabriella Graciano de Souza
+📧 E-mail: gabifc_graciano@hotmail.com
+🌐 GitHub: github.com/gabygraciano
+🖋️ Behance: behance.net/gabygraciano
+
+Leonardo José de Araújo Seabra
+📧 E-mail: leoseabrasz@gmail.com
+🖋️ Behance: https://www.behance.net/leoseabra2
 
 ## Tecnologias ⚙️
 
 - [React Native](https://reactnative.dev/docs/getting-started)
 - [Android Studio](https://developer.android.com/develop?hl=pt-br)
+- [Expo Go](https://docs.expo.dev/)
   
 ## Instalação ⬇️
 - Baixar Android Studio e escolher emulador ideal para o projeto, em seguida:
