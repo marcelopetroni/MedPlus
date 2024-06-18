@@ -1,4 +1,4 @@
-<h1 align="center">Med+</h1>
+<h1 align="center">Med+🩺</h1>
 
 ## Descrição ℹ️
 
