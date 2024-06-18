@@ -15,30 +15,30 @@ Aplicativo mobile feito em React Native que auxilia no controle de reagendamento
 #### 👨‍💻 Desenvolvedores
 
 Front-end:
-Breno do Amaral Falcão Souto
-📧 E-mail: brenodoamaral1@gmail.com
-🌐 GitHub: github.com/brenodoamaral1
+Breno do Amaral Falcão Souto<br/>
+📧 E-mail: brenodoamaral1@gmail.com<br/>
+🌐 GitHub: github.com/brenodoamaral1<br/>
 
 Back-end:
-Rennan José da Silva Miranda
-📧 E-mail: rennan.jsmiranda@gmail.com
-🌐 GitHub: github.com/RennanJSM
+Rennan José da Silva Miranda<br/>
+📧 E-mail: rennan.jsmiranda@gmail.com<br/>
+🌐 GitHub: github.com/RennanJSM<br/>
 
 Full-stack:
-Marcelo Nunes Ananias Petroni
-📧 E-mail: marceloapetroni@hotmail.com
-🌐 GitHub: github.com/marcelopetroni
+Marcelo Nunes Ananias Petroni<br/>
+📧 E-mail: marceloapetroni@hotmail.com<br/>
+🌐 GitHub: github.com/marcelopetroni<br/>
 
 #### 🎨 UX/UI Designers
 
-Gabriella Graciano de Souza
-📧 E-mail: gabifc_graciano@hotmail.com
-🌐 GitHub: github.com/gabygraciano
-🖋️ Behance: behance.net/gabygraciano
+Gabriella Graciano de Souza<br/>
+📧 E-mail: gabifc_graciano@hotmail.com<br/>
+🌐 GitHub: github.com/gabygraciano<br/>
+🖋️ Behance: behance.net/gabygraciano<br/>
 
-Leonardo José de Araújo Seabra
-📧 E-mail: leoseabrasz@gmail.com
-🖋️ Behance: https://www.behance.net/leoseabra2
+Leonardo José de Araújo Seabra<br/>
+📧 E-mail: leoseabrasz@gmail.com<br/>
+🖋️ Behance: https://www.behance.net/leoseabra2<br/>
 
 ## Tecnologias ⚙️
 
