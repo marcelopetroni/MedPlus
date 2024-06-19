@@ -23,7 +23,13 @@ function Rotas() {
         <Stack.Screen name="TelaChatBot" component={TelaChatBot} />
         <Stack.Screen name="TelaConsultas" component={TelaConsultas} />
         <Stack.Screen name="TelaHome" component={TelaHome} />
-        <Stack.Screen name="TelaLogin" component={TelaLogin} />
+        <Stack.Screen name="TelaLogin" component={TelaLogin} 
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+        }}
+        />
         <Stack.Screen name="TelaPerfil" component={TelaPerfil} />
       </Stack.Navigator>
     </NavigationContainer>
