@@ -5,10 +5,10 @@
 Aplicativo mobile feito em React Native que auxilia no controle de reagendamento de consultas com realocação de vagas à medida de cancelamento de última hora, resolvendo o problema de ausência em consultas médicas. Além disso, a aplicação conta com auxílio para triagem eficiente de pacientes e cuidados pós consulta para evitar o retorno desnecessário.
 
 ## Funcionalidades
-🔔 Notificações de Consulta: Envia lembretes para os pacientes com a opção de confirmar ou cancelar a consulta.
-📅 Realocação de Vagas: Calendário com vagas de última hora devido a cancelamentos, permitindo que pacientes se realoquem e aproveitem horários disponíveis.
-📝 Cuidados Pós-Consulta: Envia lembretes e instruções pós-consulta para garantir que os pacientes sigam as recomendações médicas.
-💬 Triagem Rápida: Assistente virtual integrado com as Tabelas da CID-10 para triagem eficiente e encaminhamento para a especialidade correta.
+🔔 Notificações de Consulta: Envia lembretes para os pacientes com a opção de confirmar ou cancelar a consulta.<br/>
+📅 Realocação de Vagas: Calendário com vagas de última hora devido a cancelamentos, permitindo que pacientes se realoquem e aproveitem horários disponíveis.<br/>
+📝 Cuidados Pós-Consulta: Envia lembretes e instruções pós-consulta para garantir que os pacientes sigam as recomendações médicas.<br/>
+💬 Triagem Rápida: Assistente virtual integrado com as Tabelas da CID-10 para triagem eficiente e encaminhamento para a especialidade correta.<br/>
 
 ## 🏆 Time
 
