@@ -16,8 +16,8 @@ export default function TelaLogin() {
           height: 81,}} />
         </View>
         <View>
-          <TextInput  onChangeText={(text) => setEmail(text)} textContentType='emailAddress' autoComplete='email' autoCapitalize= 'none' placeholder="Email" placeholderTextColor='rgba(12, 95, 115, 0.4)'  style={[styles.input,]}/>
-          <TextInput onChangeText={(text) => setPassword(text)} textContentType='password' autoComplete='off' placeholder="Senha" placeholderTextColor='rgba(12, 95, 115, 0.4)' style={[styles.input, ]}/>
+          <TextInput  style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} placeholderTextColor='rgba(12, 95, 115, 0.4)' />
+          <TextInput style={[styles.input, ]} placeholder="Senha" secureTextEntry={!showPassword} value={password} onChangeText={setPassword} placeholderTextColor='rgba(12, 95, 115, 0.4)' />
         </View>
         <View style={styles.section}>  
           <CheckBox

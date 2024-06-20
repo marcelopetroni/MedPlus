@@ -16,10 +16,16 @@ const Stack = createStackNavigator();
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TelaLogin">
+      <Stack.Navigator initialRouteName="TelaCadastro">
         <Stack.Screen name="TelaAgendamentos" component={TelaAgendamentos} />
         <Stack.Screen name="TelaAjuda" component={TelaAjuda} />
-        <Stack.Screen name="TelaCadastro" component={TelaCadastro} />
+        <Stack.Screen name="TelaCadastro" component={TelaCadastro} 
+        options={{
+          title: '',
+          headerTransparent: true,
+          headerShown: false,
+        }}
+        />
         <Stack.Screen name="TelaChatBot" component={TelaChatBot} />
         <Stack.Screen name="TelaConsultas" component={TelaConsultas} />
         <Stack.Screen name="TelaHome" component={TelaHome} />
