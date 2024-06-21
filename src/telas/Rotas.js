@@ -10,6 +10,7 @@ import TelaConsultas from './TelaConsultas';
 import TelaHome from './TelaHome';
 import TelaLogin from './TelaLogin';
 import TelaPerfil from './TelaPerfil';
+import TelaCuidados from './TelaCuidados';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ function Rotas() {
         }}
         />
         <Stack.Screen name="TelaChatBot" component={TelaChatBot} />
+        <Stack.Screen name="TelaCuidados" component={TelaCuidados} />
         <Stack.Screen name="TelaConsultas" component={TelaConsultas} />
         <Stack.Screen name="TelaHome" component={TelaHome} 
         options={{
