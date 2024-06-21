@@ -1,7 +1,7 @@
 import React from 'react';
-import { ScrollView, Image, View, Text, TextInput, StyleSheet } from 'react-native';
+import { TouchableOpacity, ScrollView, Image, View, Text, TextInput, StyleSheet } from 'react-native';
 
-export default function TelaHome() {
+export default function TelaHome({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container}>
@@ -31,35 +31,36 @@ export default function TelaHome() {
             <View style={styles.underline} />
           </View>
           <View style={styles.boxContainer}>
-            <View style={styles.box}>
+            <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaConsultas')}>
               <View style={styles.imagemContainer3}>
                 <Image style={styles.imagem3} resizeMode="cover" source={require('../../imagens/homeImages/red_kit.png')} />
               </View>
               <View style={styles.textoContainer3}>
                 <Text style={styles.texto4}>{`Minhas Consultas`}</Text>
               </View>
-            </View>
-            <View style={styles.box}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaAgendamentos')}>
               <Image style={styles.imagem4} resizeMode="cover" source={require('../../imagens/homeImages/orange_pc.png')} />
               <View style={styles.textoContainer4}>
                 <Text style={styles.texto5}>{`Agendamento Flash`}</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.boxContainer}>
-            <View style={styles.box}>
+            <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaCuidados')}>
               <Image style={styles.imagem5} resizeMode="cover" source={require('../../imagens/homeImages/person_reading.png')} />
               <View style={styles.textoContainer5}>
                 <Text style={styles.texto6}>{`Meus Cuidados`}</Text>
               </View>
-            </View>
-            <View style={styles.box}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaChatBot')}>
               <Image style={styles.imagem6} resizeMode="cover" source={require('../../imagens/homeImages/jam_medical.png')} />
               <View style={styles.textoContainer6}>
                 <Text style={styles.texto7}>{`Triagem Rápida`}</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
+          {/* Outros botões de navegação aqui */}
           <View style={styles.textoContainer7}>
             <Text style={styles.texto8}>{`Saúde em dia!`}</Text>
             <View style={styles.underline2} />
