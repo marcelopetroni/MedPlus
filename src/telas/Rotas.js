@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TelaCadastro">
+      <Stack.Navigator initialRouteName="TelaChatBot">
         <Stack.Screen name="TelaAgendamentos" component={TelaAgendamentos} />
         <Stack.Screen name="TelaAjuda" component={TelaAjuda} />
         <Stack.Screen name="TelaCadastro" component={TelaCadastro} 
