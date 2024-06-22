@@ -7,8 +7,10 @@ export default function TelaHome({ navigation }) {
       <View style={styles.container}>
         <View style={styles.rectangleView}>
           <View style={styles.conteudoContainer}>
-            <View style={styles.imagemContainer}>
-              <Image style={styles.imagem1} resizeMode="cover" source={require('../../imagens/homeImages/emiliaCarlas.png')} />
+          <View style={styles.shadowContainer}>
+              <View style={styles.imagemContainer}>
+                <Image style={styles.imagem1} resizeMode="cover" source={require('../../imagens/homeImages/emiliaCarlas.png')} />
+              </View>
             </View>
             <View style={styles.textoContainer}>
               <Text style={styles.texto1}>{`Olá, Emília Carlas.`}</Text>
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 190,
+    height: 195,
     borderBottomLeftRadius: 60,
     borderBottomRightRadius: 60,
     backgroundColor: "#048abf",
@@ -136,6 +138,19 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: '#fff',
   },
+  shadowContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,  
+  },
   imagemContainer: {
     marginLeft: 10,
     width: 70,
@@ -144,15 +159,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff', 
-    shadowColor: '#000', 
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.8, 
-    shadowRadius: 10,
-    elevation: 15, 
   },
   imagem1: {
     alignSelf: 'flex-start',
@@ -163,7 +169,7 @@ const styles = StyleSheet.create({
   },
   inputWrapper: {
     position: 'absolute',
-    top: 160,
+    top: 164,
     width: '100%',
     alignItems: 'center',
   },
@@ -181,7 +187,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 10,
     elevation: 15,
-    shadowOpacity: 1,
+    shadowOpacity: 0.20,
     paddingHorizontal: 10,
   },  
   lupa: {
@@ -240,7 +246,7 @@ const styles = StyleSheet.create({
   },
   box: {
     marginRight: 26,
-    width: '48%', // Adjust this value to change the width of the boxes
+    width: '48%', 
     height: 110,
     backgroundColor: '#FCFCFC',
     borderRadius: 10,
@@ -249,7 +255,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 5,
     },
-    shadowOpacity: 0.5,
+    shadowOpacity: 0.30,
     shadowRadius: 5,
     elevation: 10,
     justifyContent: 'center',
