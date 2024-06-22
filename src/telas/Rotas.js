@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image, StyleSheet } from 'react-native';
 
 import TelaAgendamentos from './TelaAgendamento';
 import TelaAjuda from './TelaAjuda';
@@ -13,68 +15,126 @@ import TelaPerfil from './TelaPerfil';
 import TelaCuidados from './TelaCuidados';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
+const styles = StyleSheet.create({
+  icon: {
+    width: 30,
+    height: 30,
+  },
+});
+
+// Componente para o Bottom Tab Navigator
+const TabNavigator = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarShowLabel: false,
+      }}
+    >
+      <Tab.Screen
+        name="TelaHome"
+        component={TelaHome}
+        options={{
+          title: '',
+          headerTransparent: true,
+          tabBarIcon: ({ focused }) => (
+            <Image source={require('../imagens/navbar/homeImage.png')} style={styles.icon} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="TelaPerfil"
+        component={TelaPerfil}
+        options={{
+          title: '',
+          headerTransparent: true,
+          tabBarIcon: ({ focused }) => (
+            <Image source={require('../imagens/navbar/profileImage.png')} style={styles.icon} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="TelaAjuda"
+        component={TelaAjuda}
+        options={{
+          title: '',
+          headerTransparent: true,
+          tabBarIcon: ({ focused }) => (
+            <Image source={require('../imagens/navbar/helpImage.png')} style={styles.icon} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
+// Componente para as rotas principais
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TelaHome">
-      <Stack.Screen name="TelaAgendamentos" component={TelaAgendamentos} 
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen
+          name="Main"
+          component={TabNavigator}
           options={{
             title: '',
             headerTransparent: true,
             headerShown: false,
           }}
         />
-        <Stack.Screen name="TelaAjuda" component={TelaAjuda} 
+         {/*
+        <Stack.Screen
+          name="TelaLogin"
+          component={TelaLogin}
           options={{
             title: '',
             headerTransparent: true,
             headerShown: false,
           }}
         />
-        <Stack.Screen name="TelaCadastro" component={TelaCadastro} 
+        */}
+        <Stack.Screen
+          name="TelaCadastro"
+          component={TelaCadastro}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerTransparent: true,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="TelaChatBot"
+          component={TelaChatBot}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerTransparent: true,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="TelaAgendamentos"
+          component={TelaAgendamentos}
           options={{
             title: '',
             headerTransparent: true,
             headerShown: false,
           }}
         />
-        <Stack.Screen name="TelaChatBot" component={TelaChatBot} 
+        <Stack.Screen
+          name="TelaCuidados"
+          component={TelaCuidados}
           options={{
             title: '',
             headerTransparent: true,
             headerShown: false,
           }}
         />
-        <Stack.Screen name="TelaCuidados" component={TelaCuidados} 
-          options={{
-            title: '',
-            headerTransparent: true,
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="TelaConsultas" component={TelaConsultas} 
-          options={{
-            title: '',
-            headerTransparent: true,
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="TelaHome" component={TelaHome} 
-          options={{
-            title: '',
-            headerTransparent: true,
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="TelaLogin" component={TelaLogin} 
-          options={{
-            title: '',
-            headerTransparent: true,
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen name="TelaPerfil" component={TelaPerfil} 
+        <Stack.Screen
+          name="TelaConsultas"
+          component={TelaConsultas}
           options={{
             title: '',
             headerTransparent: true,
