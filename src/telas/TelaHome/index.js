@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   textoContainer: {
     flex: 1,
-    marginLeft: 10,
+    marginLeft: 12,
     alignItems: 'flex-start',
   },
   texto1: {
@@ -139,17 +139,19 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   shadowContainer: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 71,
+    height: 71,
+    borderRadius: 100,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 6,
     },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.28,
     shadowRadius: 5,
     elevation: 5,  
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   imagemContainer: {
     marginLeft: 10,
