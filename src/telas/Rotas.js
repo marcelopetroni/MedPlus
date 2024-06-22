@@ -2,7 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
+import { useState } from 'react';
 
 import TelaAgendamentos from './TelaAgendamento';
 import TelaAjuda from './TelaAjuda';
@@ -22,12 +23,17 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  iconHome: {
+    width: 40,
+    height: 40,
+  },
 });
 
 // Componente para o Bottom Tab Navigator
 const TabNavigator = () => {
+
   return (
-    <Tab.Navigator
+    <Tab.Navigator 
       screenOptions={{
         tabBarShowLabel: false,
       }}
@@ -39,7 +45,7 @@ const TabNavigator = () => {
           title: '',
           headerTransparent: true,
           tabBarIcon: ({ focused }) => (
-            <Image source={require('../imagens/navbar/homeImage.png')} style={styles.icon} />
+            <Image source={require('../imagens/navbar/homeImage.png')} style={styles.iconHome} />
           ),
         }}
       />
@@ -64,6 +70,35 @@ const TabNavigator = () => {
             <Image source={require('../imagens/navbar/helpImage.png')} style={styles.icon} />
           ),
         }}
+      />
+      <Stack.Screen
+          name="TelaAgendamentos"
+          component={TelaAgendamentos}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerShown: false,
+            tabBarButton: () => null, // botei essa propriedade para esconder o botão na bottom tabs
+          }}
+        />
+        <Stack.Screen
+          name="TelaCuidados"
+          component={TelaCuidados}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerShown: false,
+            tabBarButton: () => null, // botei essa propriedade para esconder o botão na bottom tabs
+          }}
+        />
+        <Tab.Screen
+          name="TelaConsultas"
+          component={TelaConsultas}
+          options={{
+            title: '',
+            headerTransparent: true,
+            tabBarButton: () => null, // botei essa propriedade para esconder o botão na bottom tabs
+          }}
       />
     </Tab.Navigator>
   );
