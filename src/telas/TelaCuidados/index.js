@@ -68,6 +68,46 @@ export default function TelaCuidados({ navigation }) {
           </View>
         </View>
       </View>
+      <View style={styles.mainContainer}>
+          <View style={styles.textoContainer}>
+            <View style={styles.caixinha}></View>
+            <Text style={styles.texto}>Medicamentos</Text>
+          </View>
+          <View style={styles.boxContainer2}>
+            <View style={styles.textoCaixaContainer}>
+              <Text style={styles.textoCaixa}>Paracetamol (5mg) a cada 6h por 3 dias.</Text>
+            </View>
+            <TouchableOpacity style={styles.iconContainer}>
+              <Icon name="add-circle" size={30} style={styles.iconPlus} />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.textoContainer}>
+            <View style={styles.caixinha2}></View>
+            <Text style={styles.texto}>Recomendações</Text>
+          </View>
+          <View style={styles.boxContainer3}>
+            <View style={styles.textoCaixaContainer}>
+              <Text style={styles.textoCaixa}>Fazer exercício físico 2 vezes por semana.</Text>
+            </View>
+            <TouchableOpacity style={styles.iconContainer}>
+              <Icon name="add-circle" size={30} style={styles.iconPlus} />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.textoContainer}>
+            <View style={styles.caixinha3}></View>
+            <Text style={styles.texto}>Exames</Text>
+          </View>
+          <View style={styles.boxContainer4}>
+            <View style={styles.textoCaixaContainer}>
+              <Text style={styles.textoCaixa}>Não há exames registrados.</Text>
+            </View>
+            <TouchableOpacity style={styles.iconContainer}>
+              <Icon name="add-circle" size={30} style={styles.iconPlus} />
+            </TouchableOpacity>
+          </View>
+      </View>
     </ScrollView>
   );
 }
@@ -105,7 +145,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   boxContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
     height: 155,
     width: '75%',
@@ -118,7 +157,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 10,
     elevation: 15,
-    shadowOpacity: 0.20,
+    shadowOpacity: 0.15,
     paddingHorizontal: 10,
     flexDirection: 'collumn'
   },  
@@ -169,7 +208,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 6,
     color: '#0D5F74',
-    fontWeight: 700
+    fontWeight: '700'
   },
   bolinhaAmarela: {
     height: 10,
@@ -180,13 +219,91 @@ const styles = StyleSheet.create({
     top: -3,
     right: -1.5,
   },
-  caixinha: {
-    height: 15,
-    width: 15,
-    borderRadius: 2,
-    backgroundColor: '#F2911C',
-    position: 'absolute',
-    top: -3,
-    right: -1.5,
+  mainContainer: {
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+    marginTop: 375,
+    paddingLeft: 30
   },
+  textoContainer: {
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center'
+  },
+  caixinha: {
+    height: 17,
+    width: 17,
+    borderRadius: 3.5,
+    backgroundColor: '#F2911C',
+  },
+  caixinha2: {
+    height: 17,
+    width: 17,
+    borderRadius: 3.5,
+    backgroundColor: '#D94829',
+  },
+  caixinha3: {
+    height: 17,
+    width: 17,
+    borderRadius: 3.5,
+    backgroundColor: '#048ABF',
+  },
+  texto: {
+    color: '#0D5F74',
+    fontSize: 20,
+    fontWeight: '500'
+  },
+  boxContainer2: {
+    marginTop: 15,
+    marginBottom: 30,
+    paddingLeft: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20,
+    height: 50,
+    width: '85%',
+    borderRadius: 10,
+    backgroundColor: "rgba(242, 145, 28, 0.33)",
+  },  
+  boxContainer3: {
+    marginTop: 15,
+    marginBottom: 30,
+    paddingLeft: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20,
+    height: 50,
+    width: '85%',
+    borderRadius: 10,
+    backgroundColor: "rgba(217, 72, 41, 0.33)",
+  }, 
+  boxContainer4: {
+    marginTop: 15,
+    marginBottom: 30,
+    paddingLeft: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20,
+    height: 50,
+    width: '85%',
+    borderRadius: 10,
+    backgroundColor: "rgba(4, 138, 191, 0.33)",
+  }, 
+  textoCaixaContainer: {
+    maxWidth: '85%',
+  },
+  textoCaixa: {
+    fontSize: 13,
+    color: '#0D5F74',
+    fontWeight: 'bold'
+  },
+  iconContainer: {
+    position: 'absolute',
+    left: 280,
+    alignItems: 'center',
+  },
+  iconPlus: {
+    zIndex: 1,
+    color: "#0D5F74CF", 
+  }
 });
