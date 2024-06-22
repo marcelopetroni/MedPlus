@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
-const TelaChatBot = () => {
+const TelaChatBot = ({ navigation }) => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
 
@@ -38,7 +38,7 @@ const TelaChatBot = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headerContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('TelaHome')}>
           <Icon name="arrow-back" size={25} color="white" style={styles.backIcon} />
         </TouchableOpacity>
         <Text style={styles.headerText}>Triagem Rápida</Text>
