@@ -99,7 +99,7 @@ const TabNavigator = () => {
             headerTransparent: true,
             tabBarButton: () => null, // botei essa propriedade para esconder o botão na bottom tabs
           }}
-      />
+      />-
     </Tab.Navigator>
   );
 };
@@ -108,7 +108,7 @@ const TabNavigator = () => {
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator initialRouteName="TelaChatBot">
         <Stack.Screen
           name="Main"
           component={TabNavigator}

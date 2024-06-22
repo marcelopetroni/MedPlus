@@ -98,6 +98,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
+    marginTop: 10,
+    marginRight: 30,
     flex: 1,
   },
   chatHeader: {
