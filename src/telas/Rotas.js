@@ -176,6 +176,18 @@ function Rotas() {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="TelaAjuda"
+          component={TelaAjuda}
+          options={{
+            title: '',
+
+
+
+            headerTransparent: true,
+            headerShown: false,
+          }}
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );
