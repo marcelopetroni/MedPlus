@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Image, StyleSheet } from 'react-native';
 import { useState } from 'react';
-
 import TelaAgendamentos from './TelaAgendamento';
 import TelaAjuda from './TelaAjuda';
 import TelaCadastro from './TelaCadastro';
@@ -14,10 +13,8 @@ import TelaHome from './TelaHome';
 import TelaLogin from './TelaLogin';
 import TelaPerfil from './TelaPerfil';
 import TelaCuidados from './TelaCuidados';
-
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 const styles = StyleSheet.create({
   icon: {
     width: 30,
@@ -28,10 +25,8 @@ const styles = StyleSheet.create({
     height: 40,
   },
 });
-
 // Componente para o Bottom Tab Navigator
 const TabNavigator = () => {
-
   return (
     <Tab.Navigator 
       screenOptions={{
@@ -99,16 +94,15 @@ const TabNavigator = () => {
             headerTransparent: true,
             tabBarButton: () => null, // botei essa propriedade para esconder o botão na bottom tabs
           }}
-      />-
+      />
     </Tab.Navigator>
   );
 };
-
 // Componente para as rotas principais
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TelaChatBot">
+      <Stack.Navigator initialRouteName="Main">
         <Stack.Screen
           name="Main"
           component={TabNavigator}
@@ -192,5 +186,4 @@ function Rotas() {
     </NavigationContainer>
   );
 }
-
 export default Rotas;
