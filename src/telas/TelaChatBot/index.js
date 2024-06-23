@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity, Dimensions, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity, Dimensions, KeyboardAvoidingView, Platform, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
@@ -68,7 +68,11 @@ const TelaChatBot = ({ navigation }) => {
   };
 
   return (
-    <>
+    <KeyboardAvoidingView style={{
+      display: 'flex',
+      height: '100%',
+      backgroundColor: '#FFF'
+    }}>
       <KeyboardAvoidingView
         style={styles.mainContainer}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -112,13 +116,13 @@ const TelaChatBot = ({ navigation }) => {
           </View>
         </View>
       </KeyboardAvoidingView>
-    </>  
+    </KeyboardAvoidingView>  
   );
 };
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
+    height: '90%',
     backgroundColor: '#2699A6',
     display: 'flex',
     flexDirection: 'column'
@@ -172,14 +176,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   chatContainer: {
-    flex: 0,
+    display: 'flex',
+    height: '75%',
     backgroundColor: '#FFF',
     borderTopLeftRadius: 60,
     borderTopRightRadius: 60,
     paddingTop: 20,
     paddingBottom: 100,
     paddingHorizontal: 20,
-    height: '75%'
   },
   messagesContainer: {
     paddingBottom: 20,
