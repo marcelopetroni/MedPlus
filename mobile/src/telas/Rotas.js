@@ -102,7 +102,17 @@ const TabNavigator = () => {
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator initialRouteName="TelaCadastro">
+      <Stack.Screen
+          name="TelaCadastro"
+          component={TelaCadastro}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerTransparent: true,
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="Main"
           component={TabNavigator}
@@ -123,16 +133,6 @@ function Rotas() {
           }}
         />
         */}
-        <Stack.Screen
-          name="TelaCadastro"
-          component={TelaCadastro}
-          options={{
-            title: '',
-            headerTransparent: true,
-            headerTransparent: true,
-            headerShown: false,
-          }}
-        />
         <Stack.Screen
           name="TelaChatBot"
           component={TelaChatBot}

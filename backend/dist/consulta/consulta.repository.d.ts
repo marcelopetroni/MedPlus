@@ -24,6 +24,8 @@ export declare class ConsultaRepository {
             email: string;
             cidade: string;
             estado: string;
+            genero: string;
+            senha: string;
         };
     } & {
         id: string;
@@ -46,6 +48,8 @@ export declare class ConsultaRepository {
             email: string;
             cidade: string;
             estado: string;
+            genero: string;
+            senha: string;
         };
     } & {
         id: string;

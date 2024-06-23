@@ -15,6 +15,8 @@ export declare class PacienteRepository {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
     findAll(): Promise<{
         id: string;
@@ -28,6 +30,8 @@ export declare class PacienteRepository {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }[]>;
     findOne(where: Prisma.PacienteWhereUniqueInput): Promise<{
         id: string;
@@ -41,6 +45,8 @@ export declare class PacienteRepository {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
     update(id: string, data: Prisma.PacienteUpdateInput): Promise<{
         id: string;
@@ -54,6 +60,8 @@ export declare class PacienteRepository {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
     remove(id: string): Promise<{
         id: string;
@@ -67,5 +75,7 @@ export declare class PacienteRepository {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
 }

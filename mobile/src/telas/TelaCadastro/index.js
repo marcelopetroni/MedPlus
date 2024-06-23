@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Pressable } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Pressable, Alert } from 'react-native';
 import CheckBox from 'expo-checkbox';
 import Icon from 'react-native-vector-icons/FontAwesome6';
+import axios from 'axios';
 
 export default function CadastroScreen() {
-  const [name, setName] = useState('');
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [cpf, setCpf] = useState('');
-  const [gender, setGender] = useState('');
-  const [birthDate, setBirthDate] = useState('');
+  const [genero, setGenero] = useState('');
+  const [dataNascimento, setDataNascimento] = useState('');
   const [cep, setCep] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [neighborhood, setNeighborhood] = useState('');
-  const [password, setPassword] = useState('');
+  const [endereco, setEndereco] = useState('');
+  const [numero, setNumero] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [estado, setEstado] = useState('');
+  const [rg, setRg] = useState('');
+  const [senha, setSenha] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -23,36 +26,88 @@ export default function CadastroScreen() {
   const toggleShowPassword = () => setShowPassword(!showPassword);
   const toggleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
 
-  const handleRegister = () => {
-    // Handle the registration logic
+  const handleRegister = async () => {
+    if (senha !== confirmPassword) {
+      Alert.alert("Erro", "As senhas não coincidem!");
+      return;
+    }
+
+    if (!agreeTerms) {
+      Alert.alert("Erro", "Você deve concordar com os termos de uso!");
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:3000/paciente', {
+        nome,            
+        cpf,             
+        dataNascimento, 
+        rg,              
+        endereco,        
+        cep,             
+        numero,          
+        email,           
+        cidade,          
+        estado,          
+        genero,
+        senha,    
+      });
+      console.log('Response:', response.data);
+
+      if (response.status === 200) {
+        Alert.alert("Sucesso", "Usuário cadastrado com sucesso!");
+        // Limpe os campos após o sucesso do cadastro
+        setNome('');
+        setEmail('');
+        setCpf('');
+        setGenero('');
+        setDataNascimento('');
+        setCep('');
+        setEndereco('');
+        setNumero('');
+        setCidade('');
+        setEstado('');
+        setRg('');
+        setSenha('');
+        setConfirmPassword('');
+        setAgreeTerms(false);
+      } else {
+        Alert.alert("Erro", "Ocorreu um erro ao cadastrar o usuário.");
+      }
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Erro", "Ocorreu um erro ao cadastrar o usuário.");
+    }
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Cadastro</Text>
-      <TextInput style={styles.input} placeholder="Nome" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={name} onChangeText={setName} />
+      <TextInput style={styles.input} placeholder="Nome" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={nome} onChangeText={setNome} />
       <TextInput style={styles.input} placeholder="Email" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={email} onChangeText={setEmail} />
       <View style={styles.row}>
         <TextInput style={[styles.input, styles.halfInput]} placeholder="CPF" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cpf} onChangeText={setCpf} />
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Gênero" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={gender} onChangeText={setGender} />
+        <TextInput style={[styles.input, styles.halfInput]} placeholder="Gênero" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={genero} onChangeText={setGenero} />
       </View>
       <View style={styles.row}>
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Nascimento" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={birthDate} onChangeText={setBirthDate} />
+        <TextInput style={[styles.input, styles.halfInput]} placeholder="Nascimento" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={dataNascimento} onChangeText={setDataNascimento} />
         <TextInput style={[styles.input, styles.halfInput]} placeholder="CEP" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cep} onChangeText={setCep} />
       </View>
-      <TextInput style={styles.input} placeholder="Endereço" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={address} onChangeText={setAddress} />
+      <TextInput style={styles.input} placeholder="Endereço" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={endereco} onChangeText={setEndereco} />
       <View style={styles.row}>
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Cidade" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={city} onChangeText={setCity} />
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Bairro" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={neighborhood} onChangeText={setNeighborhood} />
+        <TextInput style={[styles.input, styles.halfInput]} placeholder="Número" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={numero} onChangeText={setNumero} />
+        <TextInput style={[styles.input, styles.halfInput]} placeholder="Cidade" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cidade} onChangeText={setCidade} />
       </View>
+      <TextInput style={styles.input} placeholder="Estado" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={estado} onChangeText={setEstado} />
+      <TextInput style={styles.input} placeholder="RG" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={rg} onChangeText={setRg} />
       <View style={styles.row}>
         <TextInput
           style={[styles.input, styles.passwordInput]}
           placeholder="Senha"
           placeholderTextColor='rgba(12, 95, 115, 0.4)'
           secureTextEntry={!showPassword}
-          value={password}
-          onChangeText={setPassword}
+          value={senha}
+          onChangeText={setSenha}
         />
         <TouchableOpacity onPress={toggleShowPassword}>
           <Text style={styles.eyeIcon}>{showPassword ? <Icon name="eye" size={20} color="#0C5F73" /> : <Icon name="eye-slash" size={20} color="#0C5F73" />}</Text>

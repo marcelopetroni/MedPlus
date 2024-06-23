@@ -19,6 +19,8 @@ model Paciente {
   email           String
   cidade          String
   estado          String
+  genero          String @default("Masculino")
+  senha           String @default("123")
 
   consultas       Consulta[]
 }

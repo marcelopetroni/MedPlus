@@ -15,6 +15,8 @@ export declare class PacienteService {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
     getPacientes(): Promise<{
         id: string;
@@ -28,6 +30,8 @@ export declare class PacienteService {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }[]>;
     getPacienteById(id: string): Promise<{
         id: string;
@@ -41,6 +45,8 @@ export declare class PacienteService {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
     updatePaciente(id: string, data: UpdatePacienteDto): Promise<{
         id: string;
@@ -54,6 +60,8 @@ export declare class PacienteService {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
     deletePaciente(id: string): Promise<{
         id: string;
@@ -67,5 +75,7 @@ export declare class PacienteService {
         email: string;
         cidade: string;
         estado: string;
+        genero: string;
+        senha: string;
     }>;
 }
