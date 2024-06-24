@@ -44,22 +44,53 @@ Leonardo José de Araújo Seabra<br/>
 
 - [Figma] (https://www.figma.com/design/fDpiclgVCrBTYi0tEZKmop/SOS-SA%C3%9ADE?node-id=0-1&t=o6H47avCbm6GsosX-1)
 
+ ![Fluxograma](https://github.com/marcelopetroni/MedPlus/assets/157065002/571aaa1b-c4dc-467b-b609-627d9d1d3f47)
+
+
 ## Tecnologias ⚙️
 
 - [React Native](https://reactnative.dev/docs/getting-started)
 - [Android Studio](https://developer.android.com/develop?hl=pt-br)
 - [Expo Go](https://docs.expo.dev/)
   
+
 ## Instalação ⬇️
-- Baixar Android Studio e escolher emulador ideal para o projeto, em seguida:
+
+### Passo 1: Configurar o Ambiente
+
+#### Opção 1: Usar um Emulador Android
+
+1. Baixe e instale o [Android Studio](https://developer.android.com/studio).
+2. No Android Studio, configure um emulador Android seguindo [estas instruções](https://developer.android.com/studio/run/emulator).
+
+#### Opção 2: Usar um Dispositivo Mobile
+
+1. Baixe o aplicativo [Expo Go](https://expo.dev/client) no seu dispositivo móvel (disponível na App Store e Google Play).
+
+### Passo 2: Clonar o Repositório
+
+Abra o terminal e execute o seguinte comando para clonar o repositório do projeto:
 ```bash
-- npm install
-- npm install -g expo-cli
-- git clone https://github.com/marcelopetroni/SosSaude.git
+git clone https://github.com/marcelopetroni/MedPlus.git
 ```
 
-## Rodando o projeto 🏃
+### Passo 3: Instalar Dependências
+
+Navegue até a pasta do projeto clonado e execute os seguintes comandos para instalar as dependências necessárias:
 ```bash
-- npx expo start
-- Press a | Open Android
+cd MedPlus
+npm install
+npm install -g expo-cli
 ```
+
+## Rodando o Projeto 🏃
+
+### Passo 1: Iniciar o Servidor Expo
+No terminal, dentro da pasta do projeto, execute:
+```bash
+npx expo start
+```
+
+### Passo 2: Abrir o Projeto
+1. Se estiver usando um emulador Android, pressione a no terminal.
+2. Se estiver usando o Expo Go no seu dispositivo móvel, escaneie o QR code exibido no terminal ou no navegador com o aplicativo Expo Go.
