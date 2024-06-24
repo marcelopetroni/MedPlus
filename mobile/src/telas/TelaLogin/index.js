@@ -17,7 +17,8 @@ export default function TelaLogin() {
         </View>
         <View>
           <TextInput  style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} placeholderTextColor='rgba(12, 95, 115, 0.4)' />
-          <TextInput style={[styles.input, ]} placeholder="Senha" secureTextEntry={!showPassword} value={password} onChangeText={setPassword} placeholderTextColor='rgba(12, 95, 115, 0.4)' />
+          <TextInput style={styles.input} placeholder="Senha" value={password} onChangeText={setPassword} placeholderTextColor='rgba(12, 95, 115, 0.4)' secureTextEntry={true}
+/>
         </View>
         <View style={styles.section}>  
           <CheckBox

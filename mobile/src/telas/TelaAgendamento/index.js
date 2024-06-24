@@ -2,6 +2,18 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import Modal from 'react-native-modal';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { LocaleConfig } from 'react-native-calendars';
+
+LocaleConfig.locales['pt-br'] = {
+  monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+  dayNamesShort: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+  today: 'Hoje'
+};
+
+LocaleConfig.defaultLocale = 'pt-br';
 
 const appointments = [
   {
@@ -30,7 +42,15 @@ const appointments = [
   },
 ];
 
-export default function FlashBookingScreen() {
+export default function FlashBookingScreen({ navigation }) {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [specialDays, setSpecialDays] = useState([false, false, true, false, false, false, true]);
+  const [items, setItems] = useState({
+    medicamentos: [],
+    recomendacoes: [],
+    exames: [],
+    });
+
   const [selectedDate, setSelectedDate] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const [filteredAppointments, setFilteredAppointments] = useState([]);
@@ -54,6 +74,9 @@ export default function FlashBookingScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+      <TouchableOpacity onPress={() => navigation.navigate('TelaHome')}>
+          <Icon name="arrow-back" size={25} color="white" style={styles.backIcon} />
+      </TouchableOpacity>
         <Text style={styles.headerText}>AGENDAMENTO FLASH</Text>
       </View>
       <View style={styles.topBanner}>
@@ -77,7 +100,7 @@ export default function FlashBookingScreen() {
           selectedDayBackgroundColor: '#00adf5',
           selectedDayTextColor: '#ffffff',
           todayTextColor: '#00adf5',
-          dayTextColor: '#2d4150',
+          dayTextColor: '#0D5F74',
           textDisabledColor: '#d9e1e8',
           dotColor: '#00adf5',
           selectedDotColor: '#ffffff',
@@ -86,6 +109,9 @@ export default function FlashBookingScreen() {
           monthTextColor: 'blue',
           indicatorColor: 'blue',
           textDayFontFamily: 'monospace',
+          textDayFontColor: '#F2911C',
+          textMonthFontColor: '#0D5F74',
+          monthTextColor: '#0D5F74',
           textMonthFontFamily: 'monospace',
           textDayHeaderFontFamily: 'monospace',
           textDayFontWeight: '300',
@@ -138,17 +164,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
+    flexDirection: 'row',
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     height: 160,
     backgroundColor: "#F2911C",
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
-  backButton: {
-    marginRight: 10,
+  backIcon: {
+    marginLeft: 20,
+    marginRight: 40,
   },
   backButtonText: {
     color: '#fff',

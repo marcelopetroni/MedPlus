@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const initialConsultations = [
   {
@@ -31,7 +32,16 @@ const initialConsultations = [
   },
 ];
 
-export default function ConsultationsScreen() {
+
+export default function ConsultationsScreen({ navigation }) {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [specialDays, setSpecialDays] = useState([false, false, true, false, false, false, true]);
+  const [items, setItems] = useState({
+    medicamentos: [],
+    recomendacoes: [],
+    exames: [],
+    });
+
   const [consultations, setConsultations] = useState(initialConsultations);
 
   const updateNextConsultation = (updatedConsultations) => {
@@ -90,6 +100,9 @@ export default function ConsultationsScreen() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.navigate('TelaHome')}>
+          <Icon name="arrow-back" size={25} color="white" style={styles.backIcon} />
+        </TouchableOpacity>
           <Text style={styles.headerText}>MINHAS CONSULTAS</Text>
         </View>
         {consultations.length > 0 ? (
@@ -108,13 +121,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
+    flexDirection: 'row',
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     height: 190,
     backgroundColor: "#D94829",
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
   headerText: {
@@ -122,10 +136,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginLeft: 50,
   },
   scrollViewContent: {
     paddingTop: 130,
     padding: 20,
+  },
+  backIcon: {
+   marginLeft: 20,
   },
   consultationCard: {
     backgroundColor: '#fff',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, ScrollView, Image, View, Text, TextInput, StyleSheet } from 'react-native';
+import { Iconify } from 'react-native-iconify';
 
 export default function TelaHome({ navigation }) {
   return (
@@ -17,13 +18,14 @@ export default function TelaHome({ navigation }) {
               <Text style={styles.texto2}>Seja bem-vinda!</Text>
             </View>
             <View style={styles.imagemContainer2}>
-              <Image style={styles.imagem2} resizeMode="cover" source={require('../../imagens/homeImages/mdi_bell.png')} />
+            <Iconify icon="mdi:bell" size={34} color="#fff" />
             </View>
           </View>
+          {/* style={styles.lupa} */}
         </View>
         <View style={styles.inputWrapper}>
           <View style={styles.inputContainer}>
-            <Image style={styles.lupa} source={require('../../imagens/homeImages/healthicons_medical-search.png')} />
+            <Iconify style={styles.lupa} icon="healthicons:medical-search" size={34} color="#0D5F74" />
             <TextInput style={styles.input} placeholder="Para onde deseja ir?" placeholderTextColor="#0D5F7466"/>
           </View>
         </View>
@@ -35,14 +37,14 @@ export default function TelaHome({ navigation }) {
           <View style={styles.boxContainer}>
             <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaConsultas')}>
               <View style={styles.imagemContainer3}>
-                <Image style={styles.imagem3} resizeMode="cover" source={require('../../imagens/homeImages/red_kit.png')} />
+                <Iconify style={styles.imagem3} icon="streamline:waiting-appointments-calendar-solid" size={44} color="#D94829" /> 
               </View>
               <View style={styles.textoContainer3}>
                 <Text style={styles.texto4}>{`Minhas Consultas`}</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaAgendamentos')}>
-              <Image style={styles.imagem4} resizeMode="cover" source={require('../../imagens/homeImages/orange_pc.png')} />
+            <Iconify style={styles.imagem4} icon="streamline:online-medical-service-monitor-solid" size={44} color="#F2911C" /> 
               <View style={styles.textoContainer4}>
                 <Text style={styles.texto5}>{`Agendamento Flash`}</Text>
               </View>
@@ -50,13 +52,13 @@ export default function TelaHome({ navigation }) {
           </View>
           <View style={styles.boxContainer}>
             <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaCuidados')}>
-              <Image style={styles.imagem5} resizeMode="cover" source={require('../../imagens/homeImages/person_reading.png')} />
+            <Iconify style={styles.imagem5} icon="medical-icon:i-medical-library" size={44} color="#0D5F74" />
               <View style={styles.textoContainer5}>
                 <Text style={styles.texto6}>{`Meus Cuidados`}</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.box} onPress={() => navigation.navigate('TelaChatBot')}>
-              <Image style={styles.imagem6} resizeMode="cover" source={require('../../imagens/homeImages/jam_medical.png')} />
+              <Iconify style={styles.imagem6} icon="jam:medical" size={44} color="#2699A6" />
               <View style={styles.textoContainer6}>
                 <Text style={styles.texto7}>{`Triagem Rápida`}</Text>
               </View>

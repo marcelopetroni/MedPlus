@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Pressable, Alert } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Pressable, Alert, ScrollView, KeyboardAvoidingView, } from 'react-native';
 import CheckBox from 'expo-checkbox';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import axios from 'axios';
@@ -82,50 +82,52 @@ export default function CadastroScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cadastro</Text>
-      <TextInput style={styles.input} placeholder="Nome" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={nome} onChangeText={setNome} />
-      <TextInput style={styles.input} placeholder="Email" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={email} onChangeText={setEmail} />
-      <View style={styles.row}>
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="CPF" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cpf} onChangeText={setCpf} />
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Gênero" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={genero} onChangeText={setGenero} />
-      </View>
-      <View style={styles.row}>
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Nascimento" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={dataNascimento} onChangeText={setDataNascimento} />
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="CEP" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cep} onChangeText={setCep} />
-      </View>
-      <TextInput style={styles.input} placeholder="Endereço" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={endereco} onChangeText={setEndereco} />
-      <View style={styles.row}>
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Número" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={numero} onChangeText={setNumero} />
-        <TextInput style={[styles.input, styles.halfInput]} placeholder="Cidade" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cidade} onChangeText={setCidade} />
-      </View>
-      <TextInput style={styles.input} placeholder="Estado" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={estado} onChangeText={setEstado} />
-      <TextInput style={styles.input} placeholder="RG" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={rg} onChangeText={setRg} />
-      <View style={styles.row}>
-        <TextInput
-          style={[styles.input, styles.passwordInput]}
-          placeholder="Senha"
-          placeholderTextColor='rgba(12, 95, 115, 0.4)'
-          secureTextEntry={!showPassword}
-          value={senha}
-          onChangeText={setSenha}
-        />
-        <TouchableOpacity onPress={toggleShowPassword}>
-          <Text style={styles.eyeIcon}>{showPassword ? <Icon name="eye" size={20} color="#0C5F73" /> : <Icon name="eye-slash" size={20} color="#0C5F73" />}</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.row}>
-        <TextInput
-          style={[styles.input, styles.passwordInput]}
-          placeholder="Repetir Senha"
-          placeholderTextColor='rgba(12, 95, 115, 0.4)'
-          secureTextEntry={!showConfirmPassword}
-          value={confirmPassword}
-          onChangeText={setConfirmPassword}
-        />
-        <TouchableOpacity onPress={toggleShowConfirmPassword}>
-          <Text style={styles.eyeIcon}>{showConfirmPassword ? <Icon name="eye" size={20} color="#0C5F73" /> : <Icon name="eye-slash" size={20} color="#0C5F73" />}</Text>
-        </TouchableOpacity>
-      </View>
+      <KeyboardAvoidingView>
+        <Text style={styles.title}>Cadastro</Text>
+        <TextInput style={styles.input} placeholder="Nome" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={nome} onChangeText={setNome} />
+        <TextInput style={styles.input} placeholder="Email" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={email} onChangeText={setEmail} />
+        <View style={styles.row}>
+          <TextInput style={[styles.input, styles.halfInput]} placeholder="CPF" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cpf} onChangeText={setCpf} />
+          <TextInput style={[styles.input, styles.halfInput]} placeholder="Gênero" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={genero} onChangeText={setGenero} />
+        </View>
+        <View style={styles.row}>
+          <TextInput style={[styles.input, styles.halfInput]} placeholder="Nascimento" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={dataNascimento} onChangeText={setDataNascimento} />
+          <TextInput style={[styles.input, styles.halfInput]} placeholder="CEP" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cep} onChangeText={setCep} />
+        </View>
+        <TextInput style={styles.input} placeholder="Endereço" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={endereco} onChangeText={setEndereco} />
+        <View style={styles.row}>
+          <TextInput style={[styles.input, styles.halfInput]} placeholder="Número" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={numero} onChangeText={setNumero} />
+          <TextInput style={[styles.input, styles.halfInput]} placeholder="Cidade" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={cidade} onChangeText={setCidade} />
+        </View>
+        <TextInput style={styles.input} placeholder="Estado" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={estado} onChangeText={setEstado} />
+        <TextInput style={styles.input} placeholder="RG" placeholderTextColor='rgba(12, 95, 115, 0.4)' value={rg} onChangeText={setRg} />
+        <View style={styles.row}>
+          <TextInput
+            style={[styles.input, styles.passwordInput]}
+            placeholder="Senha"
+            placeholderTextColor='rgba(12, 95, 115, 0.4)'
+            secureTextEntry={!showPassword}
+            value={senha}
+            onChangeText={setSenha}
+          />
+          <TouchableOpacity onPress={toggleShowPassword}>
+            <Text style={styles.eyeIcon}>{showPassword ? <Icon name="eye" size={20} color="#0C5F73" /> : <Icon name="eye-slash" size={20} color="#0C5F73" />}</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <TextInput
+            style={[styles.input, styles.passwordInput]}
+            placeholder="Repetir Senha"
+            placeholderTextColor='rgba(12, 95, 115, 0.4)'
+            secureTextEntry={!showConfirmPassword}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+          />
+          <TouchableOpacity onPress={toggleShowConfirmPassword}>
+            <Text style={styles.eyeIcon}>{showConfirmPassword ? <Icon name="eye" size={20} color="#0C5F73" /> : <Icon name="eye-slash" size={20} color="#0C5F73" />}</Text>
+          </TouchableOpacity>
+        </View>
+      </KeyboardAvoidingView>
       <View style={styles.checkboxContainer}>
         <CheckBox value={agreeTerms} onValueChange={setAgreeTerms} />
         <Text style={styles.checkboxLabel}>Eu li e concordo com os{' '}</Text>

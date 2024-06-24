@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Image, StyleSheet } from 'react-native';
+import { Iconify } from 'react-native-iconify';
 import { useState } from 'react';
 import TelaAgendamentos from './TelaAgendamento';
 import TelaAjuda from './TelaAjuda';
@@ -40,7 +41,7 @@ const TabNavigator = () => {
           title: '',
           headerTransparent: true,
           tabBarIcon: ({ focused }) => (
-            <Image source={require('../imagens/navbar/homeImage.png')} style={styles.iconHome} />
+            <Iconify icon="material-symbols-light:home-outline" size={42} color="#0D5F74" />
           ),
         }}
       />
@@ -51,7 +52,7 @@ const TabNavigator = () => {
           title: '',
           headerTransparent: true,
           tabBarIcon: ({ focused }) => (
-            <Image source={require('../imagens/navbar/profileImage.png')} style={styles.icon} />
+            <Iconify icon="carbon:user-profile" size={32} color="#0D5F74" />
           ),
         }}
       />
@@ -62,7 +63,7 @@ const TabNavigator = () => {
           title: '',
           headerTransparent: true,
           tabBarIcon: ({ focused }) => (
-            <Image source={require('../imagens/navbar/helpImage.png')} style={styles.icon} />
+            <Iconify icon="mdi:comment-help-outline" size={32} color="#0D5F74" />
           ),
         }}
       />
@@ -102,7 +103,16 @@ const TabNavigator = () => {
 function Rotas() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TelaCadastro">
+      <Stack.Navigator initialRouteName="Main">
+      <Stack.Screen
+          name="Main"
+          component={TabNavigator}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerShown: false,
+          }}
+        />
       <Stack.Screen
           name="TelaCadastro"
           component={TelaCadastro}
@@ -113,16 +123,7 @@ function Rotas() {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="Main"
-          component={TabNavigator}
-          options={{
-            title: '',
-            headerTransparent: true,
-            headerShown: false,
-          }}
-        />
-         {/*
+         
         <Stack.Screen
           name="TelaLogin"
           component={TelaLogin}
@@ -132,7 +133,7 @@ function Rotas() {
             headerShown: false,
           }}
         />
-        */}
+       
         <Stack.Screen
           name="TelaChatBot"
           component={TelaChatBot}
@@ -182,6 +183,16 @@ function Rotas() {
             headerShown: false,
           }}
           />
+           <Stack.Screen
+          name="TelaHome"
+          component={TelaHome}
+          options={{
+            title: '',
+            headerTransparent: true,
+            headerTransparent: true,
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
