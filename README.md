@@ -34,7 +34,7 @@ Marcelo Nunes Ananias Petroni<br/>
 Gabriella Graciano de Souza<br/>
 📧 E-mail: gabifc_graciano@hotmail.com<br/>
 🌐 GitHub: github.com/gabygraciano<br/>
-🖋️ Behance: behance.net/gabygraciano<br/>
+🖋️ Behance: [behance.net/gabygraciano<br/>](https://www.behance.net/gabygraciano)
 
 Leonardo José de Araújo Seabra<br/>
 📧 E-mail: leoseabrasz@gmail.com<br/>
