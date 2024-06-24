@@ -78,7 +78,7 @@ git clone https://github.com/marcelopetroni/MedPlus.git
 
 Navegue até a pasta do projeto clonado e execute os seguintes comandos para instalar as dependências necessárias:
 ```bash
-cd MedPlus
+cd mobile
 npm install
 npm install -g expo-cli
 ```
