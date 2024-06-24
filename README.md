@@ -40,6 +40,10 @@ Leonardo José de Araújo Seabra<br/>
 📧 E-mail: leoseabrasz@gmail.com<br/>
 🖋️ Behance: https://www.behance.net/leoseabra2<br/>
 
+## Documentação 📄
+
+- [Figma] (https://www.figma.com/design/fDpiclgVCrBTYi0tEZKmop/SOS-SA%C3%9ADE?node-id=0-1&t=o6H47avCbm6GsosX-1)
+
 ## Tecnologias ⚙️
 
 - [React Native](https://reactnative.dev/docs/getting-started)
